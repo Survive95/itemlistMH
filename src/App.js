@@ -1,8 +1,15 @@
-import { createRef } from 'react';
+import userEvent from '@testing-library/user-event';
+import { createRef, useEffect } from 'react';
 import itemlist from './itemlist.json'
 
 function App() {
 
+  itemlist.sort((a, b) => {
+    if(a.Name < b.Name) {return -1}
+    if(a.Name > b.Name) {return 1}
+    return 0
+  })
+  
   const input = createRef()
 
   const searchItem = function(){
