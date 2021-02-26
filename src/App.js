@@ -1,5 +1,4 @@
-import userEvent from '@testing-library/user-event';
-import { createRef, useEffect } from 'react';
+import { createRef } from 'react';
 import itemlist from './itemlist.json'
 
 function App() {
