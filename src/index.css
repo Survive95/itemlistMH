@@ -9,17 +9,27 @@
 
 :root{
   --widthApp:60vw;
+  --widthGrid:repeat(5, 1fr);
 }
 
 @media(max-width:1200px){
   :root{
     --widthApp:80vw;
+    --widthGrid:repeat(4, 1fr);
   }
 }
 
 @media(max-width:900px){
   :root{
     --widthApp:90vw;
+    --widthGrid:repeat(3, 1fr);
+  }
+}
+
+@media(max-width:600px){
+  :root{
+    --widthApp:90vw;
+    --widthGrid:repeat(2, 1fr);
   }
 }
 
@@ -35,21 +45,38 @@
   padding-bottom: 40px;
   margin-bottom: 40px;
   border-bottom: 1px solid rgb(223, 223, 223);
+  display: flex;
 }
 
 .search_item{
   width: 100%;
   height: 50px;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.116);
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.116); */
+  background-color: rgba(63, 93, 126, 0.068);
   outline: none;
   padding-left: 10px;
   font-size: 16px;
 }
 
+.search_ico{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  background-color: rgba(63, 93, 126, 0.068);
+  border-radius: 0 5px 5px 0;
+  color: rgb(63, 93, 126);
+}
+
+.search_item::placeholder{
+  color: rgb(63, 93, 126);
+}
+
 .search_item:focus::placeholder{
-  color: rgb(216, 216, 216);
+  color: rgb(185, 185, 185);
 }
 
 .table_itemlist{
@@ -72,5 +99,50 @@
 }
 
 .table_itemlist tr:nth-child(2n){
-  background-color: rgba(241, 244, 252, 0.322);
+  background-color: rgba(63, 93, 126, 0.068);
 }
+
+.table_container{
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.116); */
+  /* padding: 20px; */
+  border-radius: 10px;
+}
+
+
+/*TYPELIST*/
+
+.typeList{
+  display: grid;
+  grid-template-columns: var(--widthGrid);
+  gap: 20px;
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+
+.typeList-item-button{
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgba(63, 93, 126, 0.068);
+  color: rgb(63, 93, 126);
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.typeList-item-button:hover{
+  background-color: rgba(63, 93, 126, 0.733);
+  color: white;
+}
+
+.type-title{
+  margin-bottom: 20px;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+/*TYPELIST*/
